@@ -1,0 +1,15 @@
+com/myCompany/objects/Employee.class
+com/myCompany/controller/EmployeeController.class
+com/myCompany/controller/ProjectController.class
+com/myCompany/dao/ProjectDAO.class
+com/myCompany/config/CassandraConfig.class
+com/myCompany/config/MyCassandraTemplate.class
+com/myCompany/MyDockerCompanyApplication.class
+com/myCompany/dao/impl/ProjectDAOImpl.class
+com/myCompany/service/impl/ProjectServiceImpl.class
+com/myCompany/service/EmployeeService.class
+com/myCompany/service/impl/EmployeeServiceImpl.class
+com/myCompany/dao/impl/EmployeeDAOImpl.class
+com/myCompany/dao/EmployeeDAO.class
+com/myCompany/service/ProjectService.class
+com/myCompany/objects/Project.class
