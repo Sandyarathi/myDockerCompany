@@ -5,7 +5,7 @@
 
 	<groupId>com.myCompany</groupId>
 	<artifactId>myCompany</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>jar</packaging>
 
 	<name>myDockerCompany</name>
@@ -50,7 +50,8 @@
 	
 	<build>
 		<plugins>
-			<plugin>
+			
+                <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>1.3.3.RELEASE</version>
