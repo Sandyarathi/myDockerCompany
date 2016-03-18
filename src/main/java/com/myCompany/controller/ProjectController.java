@@ -36,14 +36,13 @@ public class ProjectController {
 	@RequestMapping(value="/project", method = RequestMethod.POST, 
 			produces = "application/json", consumes= "application/json")
 	public ResponseEntity<Project> createProject( @RequestBody @Valid Project project){
-		Project proj = projectService.createProject(project);
-		if(proj !=null){
-			 if(projectService.projectExists(proj.id)){
-				 return new ResponseEntity<Project>(HttpStatus.CONFLICT);
-
-			 }
-			 else
-				 return new ResponseEntity<Project>(proj,HttpStatus.CREATED);
+		if(!projectService.projectExists(project.id)){
+			Project proj = projectService.createProject(project);
+			if(proj !=null){
+				return new ResponseEntity<Project>(proj,HttpStatus.CREATED);
+			}
+			else
+				return new ResponseEntity<Project>(HttpStatus.CONFLICT);
 		}
 		else
 			return new ResponseEntity<Project>(HttpStatus.CONFLICT);

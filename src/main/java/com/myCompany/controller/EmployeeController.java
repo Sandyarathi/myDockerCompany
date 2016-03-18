@@ -37,17 +37,18 @@ public class EmployeeController {
 	@RequestMapping(value="/employee", method = RequestMethod.POST)
 	@ResponseBody
 	public ResponseEntity<Employee> createEmployee( @RequestBody @Valid Employee employee){
-		Employee emp = employeeService.createEmployee(employee);
-		if(emp !=null){
-			 if(employeeService.employeeExists(emp.id)){
-				 return new ResponseEntity<Employee>(HttpStatus.CONFLICT);
-			 }
-			 else
-				 return new ResponseEntity<Employee>(emp,HttpStatus.CREATED);
+		if(!employeeService.employeeExists(employee.id)){
+			Employee emp = employeeService.createEmployee(employee);
+			if(emp !=null){
+				return new ResponseEntity<Employee>(emp,HttpStatus.CREATED);
+			}
+			else
+				return new ResponseEntity<Employee>(HttpStatus.CONFLICT);
 		}
 		else
 			return new ResponseEntity<Employee>(HttpStatus.CONFLICT);
 	}
+	
 	
 			
 
